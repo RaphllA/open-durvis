@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>open-durvis</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div id="wall" class="photo-wall" aria-hidden="true"></div>
+  <main class="app">
+    <section class="search-shell">
+      <header class="hero">
+        <div class="eyebrow">OPEN ARCHIVE</div>
+        <h1>open-durvis</h1>
+        <p id="meta">正在加载索引...</p>
+      </header>
+      <section class="search-panel">
+        <input id="q" type="search" placeholder="搜索：客服 api / 老婆 / 投票 / 任意片段" autocomplete="off" />
+        <button id="clear">清空</button>
+      </section>
+      <section class="filters">
+        <label>模式
+          <select id="mode">
+            <option value="fuzzy">模糊</option>
+            <option value="exact">精确</option>
+          </select>
+        </label>
+        <label>每页
+          <select id="limit"><option>20</option><option>50</option><option>100</option></select>
+        </label>
+      </section>
+      <section id="stats" class="stats"></section>
+    </section>
+    <section id="results" class="results"></section>
+  </main>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "total": 15037,
+  "chunks": [
+    "messages_000.json",
+    "messages_001.json",
+    "messages_002.json",
+    "messages_003.json",
+    "messages_004.json",
+    "messages_005.json",
+    "messages_006.json",
+    "messages_007.json",
+    "messages_008.json",
+    "messages_009.json",
+    "messages_010.json",
+    "messages_011.json",
+    "messages_012.json",
+    "messages_013.json",
+    "messages_014.json",
+    "messages_015.json"
+  ],
+  "generatedAt": "2026-05-30 19:50:58",
+  "copiedImages": 15037,
+  "missingImages": 0
+}
