@@ -19,6 +19,7 @@ function setupWall() {
 function normalize(s) { return (s || '').toLowerCase().replace(/\s+/g, ' ').trim(); }
 function terms(q) { return normalize(q).split(' ').filter(Boolean); }
 function esc(s) { return (s || '').replace(/[&<>"]/g, c => ({'&':'&','<':'<','>':'>','"':'"'}[c])); }
+function assetUrl(path) { return (path || '').split('/').map(part => encodeURIComponent(part)).join('/'); }
 function bigrams(s) { const x = normalize(s).replace(/\s+/g, ''); const arr = []; for (let i = 0; i < x.length - 1; i++) arr.push(x.slice(i, i + 2)); return arr; }
 function fuzzyScore(query, text) {
   const q = normalize(query), t = normalize(text);
@@ -85,8 +86,9 @@ function titleOf(m) {
   return text || '(无文字内容)';
 }
 function card(m, score) {
-  const img = m.image ? `<img class="thumb" loading="lazy" src="${esc(m.image)}" alt="${esc(m.id)}" />` : '';
-  const dl = m.image ? `<a href="${esc(m.image)}" download>下载图片</a>` : '';
+  const url = m.image ? assetUrl(m.image) : '';
+  const img = url ? `<img class="thumb" loading="lazy" src="${esc(url)}" alt="${esc(m.id)}" />` : '';
+  const dl = url ? `<a href="${esc(url)}" download>下载图片</a>` : '';
   return `<article class="card">
     ${img}
     <div class="card-body">
